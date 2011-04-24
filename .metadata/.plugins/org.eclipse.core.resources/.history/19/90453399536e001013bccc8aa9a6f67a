@@ -1,0 +1,11 @@
+package lab2;
+
+public class LuffarSchack {
+
+	public static void main(String[] args) 
+	{
+		Viewer plan1 = new Viewer(1);
+		Viewer plan2 = new Viewer(2);
+	}
+
+}

@@ -1,0 +1,31 @@
+package lab2;
+import javax.swing.*;
+
+
+
+public class Viewer extends JPanel implements Observer 
+{
+	private JFrame Frame1;
+	
+	public Viewer()
+	{
+		Frame1 = new JFrame();
+		Frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Frame1.setSize(800, 600);
+		Frame1.setResizable(false);
+		Frame1.add(this);
+		Frame1.setVisible(true);
+		
+	}
+	public static void main(String[] args)
+	{
+
+	}
+
+	@Override
+	public void Notify() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

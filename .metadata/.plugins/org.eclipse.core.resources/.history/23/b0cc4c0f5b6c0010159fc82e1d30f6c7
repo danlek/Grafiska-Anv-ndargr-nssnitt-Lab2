@@ -1,0 +1,20 @@
+package lab2;
+import javax.swing.*;
+
+
+
+public class Viewer implements Observer extends JPanel
+{
+
+	public static void main(String[] args)
+	{
+
+	}
+
+	@Override
+	public void Notify() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

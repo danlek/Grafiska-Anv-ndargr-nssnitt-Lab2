@@ -1,0 +1,9 @@
+package lab2;
+
+public abstract class Observer 
+{
+	public void Notify()
+	{
+		
+	}
+}

@@ -1,0 +1,21 @@
+package lab2;
+
+public class LuffarSchack 
+{
+	private Model m;
+	private Controller c;
+	private Viewer plan1;
+	private Viewer plan2;
+	public LuffarSchack()
+	{
+		m = new Model();
+		c = new Controller(m);
+		plan1 = new Viewer(1, m, c);
+		plan2 = new Viewer(2, m, c);
+	}
+	public static void main(String[] args) 
+	{
+		LuffarSchack luffy = new LuffarSchack();
+	}
+
+}

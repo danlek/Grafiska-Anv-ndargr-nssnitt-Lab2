@@ -1,0 +1,23 @@
+package lab2;
+import javax.swing.*;
+import java.awt.*;
+
+public class SpelPlan extends JPanel
+{
+	private JButton[] spelPlan;
+	private Controller kontroll;
+	public SpelPlan(Controller k)
+	{
+		super(new GridLayout(3, 3));
+		kontroll = k;
+		spelPlan = new JButton[9];
+		for(int i = 0; i < spelPlan.length; i++)
+		{
+			spelPlan[i] = new JButton();
+			spelPlan[i].setName(String.valueOf(i));
+			spelPlan[i].setText("");
+			spelPlan[i].addActionListener(kontroll);
+			this.add(spelPlan[i]);
+		}
+	}
+}

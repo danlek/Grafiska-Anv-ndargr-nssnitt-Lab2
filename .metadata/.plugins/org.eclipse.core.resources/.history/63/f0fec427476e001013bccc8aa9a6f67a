@@ -1,0 +1,37 @@
+package lab2;
+import javax.swing.*;
+import java.awt.*;
+
+
+public class Viewer extends JPanel implements Observer 
+{
+	private JFrame Frame1;
+	private Controller kontroll;
+	private SpelPlan spelPlan1;
+	public Viewer()
+	{
+		super(new GridLayout(0,3));
+		Frame1 = new JFrame("Lab 2");
+		Frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Frame1.setSize(800, 600);
+		Frame1.setResizable(false);
+		Frame1.add(this);
+		Frame1.setVisible(true);
+		
+		kontroll = new Controller();
+		
+		spelPlan1 = new SpelPlan(kontroll);
+		this.add(spelPlan1);
+	}
+	public static void main(String[] args)
+	{
+		Viewer V = new Viewer();
+	}
+
+	@Override
+	public void Notify() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

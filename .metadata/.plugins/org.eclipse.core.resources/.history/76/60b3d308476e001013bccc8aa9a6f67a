@@ -1,0 +1,52 @@
+package lab2;
+
+public class Model 
+{
+	private class ModelData
+	{
+		private String first;
+		private String second;
+		private String third;
+
+		public ModelData()
+		{
+			first = "a";
+			second = "b";
+			third = "c";
+		}
+		public void setDataNShit(String data, int whichOne)
+		{ 
+			switch(whichOne)
+			{
+			case 1:
+				first = data;
+				break;
+			case 2:
+				second = data;
+				break;
+			case 3:
+				third = data;
+				break;
+			}  
+		}
+		public Boolean connectTheDots()
+		{
+			Boolean connected = false;
+			if (first == second && second == third)
+			{
+				connected = true;
+			}
+			return connected;
+		}
+
+		public void purge()
+		{
+			first = "a";
+			second = "b";
+			third = "c";
+		}
+	}
+	
+	
+}
+

@@ -1,0 +1,54 @@
+package lab2;
+import javax.swing.*;
+import java.awt.*;
+
+
+public class Viewer extends JPanel implements Observer 
+{
+	private JFrame frame;
+	private Controller c;
+	private Model m;
+	private JButton reset;
+	private SpelPlan spelPlanet;
+	public Viewer(int spelPlan, Model m, Controller c)
+	{
+		super(new GridLayout(0,2));
+		frame = new JFrame("Lab 2");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(800, 600);
+		frame.setResizable(false);
+		frame.add(this);
+		frame.setVisible(true);
+		if(spelPlan == 1)
+		{
+			frame.setLocation(0, 0);
+		}
+		else
+		{
+			frame.setLocation(810, 0);
+		}
+		
+		this.c = c;
+		
+		this.m = m;
+		
+		spelPlanet = new SpelPlan(c);
+		this.add(spelPlanet);
+		
+		reset = new JButton("Reset");
+		this.add(reset);
+		reset.addActionListener(c);
+		
+		m.addObserver(this);
+	}
+	@Override
+	public void Notify() 
+	{
+		update();
+	}
+	public void update()
+	{
+		spelPlanet.updateSpelPlan(m.getSymbol(), m.getWhichButton());
+	}
+
+}
